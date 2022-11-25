@@ -1,0 +1,1252 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+<variables>
+<variable id="jA]j_SKa.%kHH|.+9ml{">FourBarPos</variable>
+<variable id="Y[+/?x30c-19;m~T).8J">Noodle</variable>
+<variable id="b-/zT|)mq(1-}Ms52o5C">UpArmButtonPressed</variable>
+<variable id="RHbv4g[MceRxNqDt9dg@">DownArmButtonPressed</variable>
+</variables>
+<block type="procedures_defnoreturn" id="!I@z1Z`sT_;{5~hnwH9$" x="0" y="0">
+<field name="NAME">cheese²</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="controls_if" id="a*tNBgKY7vgmf2Nyk$*z">
+<mutation else="1"/>
+<value name="IF0">
+<block type="gamepad_getProperty_Boolean" id="f6N6!9`#q[%lJ}4LuL85">
+<field name="IDENTIFIER">gamepad2</field>
+<field name="PROP">B</field>
+<data>{"IDENTIFIER":"gamepad2"}</data>
+</block>
+</value>
+<statement name="DO0">
+<block type="servo_setProperty_Number" id="b5,BeJD+nj*eHI3,*RR/">
+<field name="IDENTIFIER">LiftLeftAsServo</field>
+<field name="PROP">Position</field>
+<data>{"IDENTIFIER":"LiftLeft","block_warning_hidden":true}</data>
+<value name="VALUE">
+<shadow type="math_number" id="bK.]PDhbV7dm=3}.$(I$">
+<field name="NUM">0</field>
+</shadow>
+</value>
+<next>
+<block type="servo_setProperty_Number" id="+ZzSJZz/{Y#4aIr6xhHK">
+<field name="IDENTIFIER">LiftRightAsServo</field>
+<field name="PROP">Position</field>
+<data>{"IDENTIFIER":"LiftRight","block_warning_hidden":true}</data>
+<value name="VALUE">
+<shadow type="math_number" id="H=EiVf#]?*hOW)UdQ~b2">
+<field name="NUM">0</field>
+</shadow>
+</value>
+</block>
+</next>
+</block>
+</statement>
+<statement name="ELSE">
+<block type="servo_setProperty_Number" id="n9^7y}=@S]JZ7T9dK(m]">
+<field name="IDENTIFIER">LiftLeftAsServo</field>
+<field name="PROP">Position</field>
+<data>{"IDENTIFIER":"LiftLeft","block_warning_hidden":true}</data>
+<value name="VALUE">
+<shadow type="math_number" id="Av/]aa.g)s5%|PX0J(Um">
+<field name="NUM">1</field>
+</shadow>
+</value>
+<next>
+<block type="servo_setProperty_Number" id="LRbj%8FcxMQ90gD1j~*2">
+<field name="IDENTIFIER">LiftRightAsServo</field>
+<field name="PROP">Position</field>
+<data>{"IDENTIFIER":"LiftRight","block_warning_hidden":true}</data>
+<value name="VALUE">
+<shadow type="math_number" id="!Tx3Sbf7Q[;0YPg|65V/">
+<field name="NUM">1</field>
+</shadow>
+</value>
+</block>
+</next>
+</block>
+</statement>
+<next>
+<block type="telemetry_addNumericData_Number" id="0S+SVuzZkml09(u!tP*z">
+<value name="KEY">
+<shadow type="text" id=":|{suMa)@~ECX0nP-(sf">
+<field name="TEXT">Lift</field>
+</shadow>
+</value>
+<value name="NUMBER">
+<shadow type="math_number" id="O39wg;NO.UboZ~e-ol1$">
+<field name="NUM">123</field>
+</shadow>
+<block type="servo_getProperty_Number" id="vpm|-i.,Xj5sNDD=!sNl">
+<field name="IDENTIFIER">LiftLeftAsServo</field>
+<field name="PROP">Position</field>
+<data>{"IDENTIFIER":"LiftLeft"}</data>
+</block>
+</value>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="6!6Sy*cz^;Q*W_57~{%!" x="0" y="300">
+<field name="NAME">cheese</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="comment" id="}%t.Rrj7FK/QeSo)9sF=">
+<field name="COMMENT">Use Y to toggle grip</field>
+<next>
+<block type="comment" id="[fn0?jZlOgO%AXGascY!">
+<field name="COMMENT">Keep Gripper position in valid range</field>
+<next>
+<block type="controls_if" id="FICec(gKTfukr+JyD:4z">
+<mutation else="1"/>
+<value name="IF0">
+<block type="gamepad_getProperty_Boolean" id="[;2Z(Yi8Xs~a^D`Caj$*">
+<field name="IDENTIFIER">gamepad2</field>
+<field name="PROP">LeftBumper</field>
+<data>{"IDENTIFIER":"gamepad2"}</data>
+</block>
+</value>
+<statement name="DO0">
+<block type="servo_setProperty_Number" id="PuFtRJ9%.c2%X@1(3K(f">
+<field name="IDENTIFIER">ElliottispotatoClawAsServo</field>
+<field name="PROP">Position</field>
+<data>{"IDENTIFIER":"ElliottispotatoClaw"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="r|F8$/lxakjeXE!M=LNe">
+<field name="NUM">0</field>
+</shadow>
+</value>
+</block>
+</statement>
+<statement name="ELSE">
+<block type="servo_setProperty_Number" id="Z52D;;QUJtXOkguRh![A">
+<field name="IDENTIFIER">ElliottispotatoClawAsServo</field>
+<field name="PROP">Position</field>
+<data>{"IDENTIFIER":"ElliottispotatoClaw"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="PV1n?fB/*aM*[X3e4af-">
+<field name="NUM">1</field>
+</shadow>
+</value>
+</block>
+</statement>
+<next>
+<block type="telemetry_addNumericData_Number" id="K5tuMjkR`6;Bgh/YJrkY">
+<value name="KEY">
+<shadow type="text" id=";*o[(ZiiuhYnfWX0yjq1">
+<field name="TEXT">Claw Serv</field>
+</shadow>
+</value>
+<value name="NUMBER">
+<shadow type="math_number" id="ow95L4t,,*R!@dMvT=P{">
+<field name="NUM">123</field>
+</shadow>
+<block type="servo_getProperty_Number" id="TkpXk=7qxX1{m5C5|?Bt">
+<field name="IDENTIFIER">ElliottispotatoClawAsServo</field>
+<field name="PROP">Position</field>
+<data>{"IDENTIFIER":"ElliottispotatoClaw"}</data>
+</block>
+</value>
+<next>
+<block type="telemetry_update" id="ilQjGY.P,97uT8{M3P:T"/>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="jx-7MQu[rykX8Zos(#{C" x="0" y="626">
+<field name="NAME">corn, a big lump of knobs, it has the juice</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="comment" id="Ncb1he9sW`.8j/sz5,z?">
+<field name="COMMENT">(It has the juice)</field>
+<next>
+<block type="dcMotor_setDualProperty_Number" id="Fy[}K{X*z-Yv`B_MZG=H">
+<field name="PROP">Power</field>
+<field name="IDENTIFIER1">BackLeftAsDcMotor</field>
+<field name="IDENTIFIER2">BackRightAsDcMotor</field>
+<data>{"IDENTIFIER1":"BackLeft","IDENTIFIER2":"BackRight"}</data>
+<value name="VALUE1">
+<shadow type="math_number" id="P;,-wU!-s~CKJhcrB4MN">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="my)/p:aa7K.awvFgoGN^">
+<field name="OP">MINUS</field>
+<value name="A">
+<shadow type="math_number" id="D[tb8waIVVYLZ2cB9zn*">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="9)HS[~3`T7.+{xkG)vNk">
+<field name="OP">MULTIPLY</field>
+<value name="A">
+<shadow type="math_number" id="TdLssUk2b+_jN)h(Tz*j">
+<field name="NUM">-0.66</field>
+</shadow>
+</value>
+<value name="B">
+<shadow type="math_number" id="vuwrgMI[Ie*y~+PMCZ#-">
+<field name="NUM">1</field>
+</shadow>
+<block type="gamepad_getProperty_Number" id="-xaVDClv_0=sG:G*0,E/">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">RightStickX</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="Fr{`=@]|G;hOY5%)Og0j">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="DL:?im_i4P-D7b+IM6LD">
+<field name="OP">MULTIPLY</field>
+<value name="A">
+<shadow type="math_number" id=";t%hXN)O6MUiAkwNrNuU">
+<field name="NUM">0.5</field>
+</shadow>
+</value>
+<value name="B">
+<shadow type="math_number" id="6+yRe0xO6m?AZ{6-lhQ:">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="Xr]Ap}esnuZMgmcdWD0p">
+<field name="OP">ADD</field>
+<value name="A">
+<shadow type="math_number" id="Gswiti6wt%.49m3p@^wL">
+<field name="NUM">1</field>
+</shadow>
+<block type="gamepad_getProperty_Number" id="5Z,NN|:iJW_kY+NLYnhz">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">LeftStickX</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="xRh{Awi2rlxp}+#(_Rsr">
+<field name="NUM">1</field>
+</shadow>
+<block type="gamepad_getProperty_Number" id="_13]$!wEWAQDJ}vy[v+X">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">LeftStickY</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+</block>
+</value>
+</block>
+</value>
+</block>
+</value>
+<value name="VALUE2">
+<shadow type="math_number" id="#4nUxOD4hX|ZE4rI@.b=">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="vAUBZe[o`Jx^bdT;8umT">
+<field name="OP">MINUS</field>
+<value name="A">
+<shadow type="math_number" id="_K?B^rzl0EjW{(J4P7|,">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="X.?zCg{%RnIQhd;aW}5f">
+<field name="OP">MULTIPLY</field>
+<value name="A">
+<shadow type="math_number" id="8`1;YEhSp0F5]^Y_p0gc">
+<field name="NUM">0.66</field>
+</shadow>
+</value>
+<value name="B">
+<shadow type="math_number" id="qv0d2*9[;WaZqNz*[IZ8">
+<field name="NUM">1</field>
+</shadow>
+<block type="gamepad_getProperty_Number" id="NJn3%@B?;eQ^QF,/eeu]">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">RightStickX</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="%uDt@-D*]!1:.e$[:X32">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="w.h|K;-)u/LV$~C`!L:z">
+<field name="OP">MULTIPLY</field>
+<value name="A">
+<shadow type="math_number" id="NKIz3q2~3*{l(,DIQvPo">
+<field name="NUM">-0.5</field>
+</shadow>
+</value>
+<value name="B">
+<shadow type="math_number" id="rO(tZZ=X:}!oEYVb]Lhv">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="nH|9!rb!{}oKkB1u0dUA">
+<field name="OP">MINUS</field>
+<value name="A">
+<shadow type="math_number" id="FNx*Nxxu2V=uI`/(milL">
+<field name="NUM">1</field>
+</shadow>
+<block type="gamepad_getProperty_Number" id="Q-q|m4y:!1jLjH;C7~`N">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">LeftStickX</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="B%!1bYM19X@=2p,t9Z(N">
+<field name="NUM">1</field>
+</shadow>
+<block type="gamepad_getProperty_Number" id="jiUZV~vwgQ~ryDf8xLTg">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">LeftStickY</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+</block>
+</value>
+</block>
+</value>
+</block>
+</value>
+<next>
+<block type="dcMotor_setDualProperty_Number" id="i,aS)L4}iB4@.sQa`8b^">
+<field name="PROP">Power</field>
+<field name="IDENTIFIER1">FrontLeftAsDcMotor</field>
+<field name="IDENTIFIER2">FrontRightAsDcMotor</field>
+<data>{"IDENTIFIER1":"FrontLeft","IDENTIFIER2":"FrontRight"}</data>
+<value name="VALUE1">
+<shadow type="math_number" id="maur^-i1-SR=@5(L#U~P">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="92S)PlAy/AG/G7V7m%r%">
+<field name="OP">MINUS</field>
+<value name="A">
+<shadow type="math_number" id="gJW!cv#riZkJG/C*mp%#">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="~.Kim69Ep{Iiy`H1:DkC">
+<field name="OP">MULTIPLY</field>
+<value name="A">
+<shadow type="math_number" id="58ytC#VyCvFe9Ax//u~z">
+<field name="NUM">-0.66</field>
+</shadow>
+</value>
+<value name="B">
+<shadow type="math_number" id="9d.IHMSfHQ;bV:/R$9}[">
+<field name="NUM">1</field>
+</shadow>
+<block type="gamepad_getProperty_Number" id="f-7Apo1D~dzBe$LNxC=r">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">RightStickX</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="+Hk6eD5I9|!yK[JEhE:5">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="NBqodAf;M)RoF#!HlsFV">
+<field name="OP">MULTIPLY</field>
+<value name="A">
+<shadow type="math_number" id="1C5CT?Jq=khnzp}2.JF(">
+<field name="NUM">-0.5</field>
+</shadow>
+</value>
+<value name="B">
+<shadow type="math_number" id="1TYidcx|OH#sf4~Ab*/u">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="_K(d;*N;EYLau%woTji*">
+<field name="OP">MINUS</field>
+<value name="A">
+<shadow type="math_number" id="z+965(b|)}ZE1B1HHhvM">
+<field name="NUM">1</field>
+</shadow>
+<block type="gamepad_getProperty_Number" id="K,P!u`F)=C9)RWb!Z{$C">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">LeftStickX</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="!_s#]JRZr{gW]E[a|G@x">
+<field name="NUM">1</field>
+</shadow>
+<block type="gamepad_getProperty_Number" id="jpqg_l]sz-^r9[5kXWLt">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">LeftStickY</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+</block>
+</value>
+</block>
+</value>
+</block>
+</value>
+<value name="VALUE2">
+<shadow type="math_number" id="=B@^G).v,igYKX!j]1BA">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="2|Sj$j-nUyH=R=,G6dS!">
+<field name="OP">MINUS</field>
+<value name="A">
+<shadow type="math_number" id="OIuL!q0A=]b~+XW4piCb">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="?M$H[:QjeyhPb;sO0yiE">
+<field name="OP">MULTIPLY</field>
+<value name="A">
+<shadow type="math_number" id="a/S!Obk9j:LuNb#v/sk4">
+<field name="NUM">-0.66</field>
+</shadow>
+</value>
+<value name="B">
+<shadow type="math_number" id="^-25uNO3hsnU=YKcnOf3">
+<field name="NUM">1</field>
+</shadow>
+<block type="gamepad_getProperty_Number" id="^9C`@r:B|goH]!4DJ*$T">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">RightStickX</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="y9DD4kYrOO$6aC3EYfm^">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="wD/soU65u+F)mYAKlZ$-">
+<field name="OP">MULTIPLY</field>
+<value name="A">
+<shadow type="math_number" id="A`;`}4ydpp{|}_W[NSn2">
+<field name="NUM">-0.5</field>
+</shadow>
+</value>
+<value name="B">
+<shadow type="math_number" id="Hnk,`{!]m0a`R)q`u{wX">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="5%t]lFO1X?-8P%YVR$|X">
+<field name="OP">ADD</field>
+<value name="A">
+<shadow type="math_number" id="_1d.3-{+2d,O1o[.[KsQ">
+<field name="NUM">1</field>
+</shadow>
+<block type="gamepad_getProperty_Number" id="2@y_kFxS%r#PQ)57DXL.">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">LeftStickX</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="0{LYS,/3ij[DRF3Yp0S9">
+<field name="NUM">1</field>
+</shadow>
+<block type="gamepad_getProperty_Number" id=";M,+n$Z.(K#%W@2ZNtJT">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">LeftStickY</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+</block>
+</value>
+</block>
+</value>
+</block>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="v8u]c!/O)W2-2!$H_OD." x="0" y="1004">
+<field name="NAME">Leef Blower</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="telemetry_addNumericData_Number" id="MAo=RD9epWTat7$aO2ej">
+<value name="KEY">
+<shadow type="text" id="Xe.^Y@jVn(D)+c[|k=i^">
+<field name="TEXT">FB noodle</field>
+</shadow>
+</value>
+<value name="NUMBER">
+<shadow type="math_number">
+<field name="NUM">123</field>
+</shadow>
+<block type="variables_get" id="uO6cj9mEYYIwQ?o.+,V0">
+<field name="VAR" id="Y[+/?x30c-19;m~T).8J">Noodle</field>
+</block>
+</value>
+<next>
+<block type="telemetry_addNumericData_Number" id="j@$NyUD1XN9Zs=,aDpHu">
+<value name="KEY">
+<shadow type="text" id="S{Kk16%:[,.;ZElwzl^*">
+<field name="TEXT">FBP</field>
+</shadow>
+</value>
+<value name="NUMBER">
+<shadow type="math_number">
+<field name="NUM">123</field>
+</shadow>
+<block type="variables_get" id="MBp9:~Q_saA}MO]r#m^A">
+<field name="VAR" id="jA]j_SKa.%kHH|.+9ml{">FourBarPos</field>
+</block>
+</value>
+<next>
+<block type="telemetry_addNumericData_Number" id=".p]woZ|4Sklc5b-|0y$t">
+<value name="KEY">
+<shadow type="text" id="aTj~J_~?TI=N{!^[#6ry">
+<field name="TEXT">FBP non var</field>
+</shadow>
+</value>
+<value name="NUMBER">
+<shadow type="math_number" id="WJ9l7|34i3yb%B;c=X0*">
+<field name="NUM">123</field>
+</shadow>
+<block type="servo_getProperty_Number" id="WB{M1d+5mFKo[Gn-_Sww">
+<field name="IDENTIFIER">budsterupanddownAsServo</field>
+<field name="PROP">Position</field>
+<data>{"IDENTIFIER":"budsterupanddown"}</data>
+</block>
+</value>
+<next>
+<block type="telemetry_update" id="s:P(%k!i%X,Bmo1c5v!("/>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="OpN8!1beqW{8Bw6M/?m+" deletable="false" x="0" y="1327">
+<field name="NAME">runOpMode</field>
+<comment pinned="false" h="45" w="532">This function is executed when this Op Mode is selected from the Driver Station.</comment>
+<statement name="STACK">
+<block type="comment" id="58)EXia1!J_|7).;^Mbm">
+<field name="COMMENT">Press Y to toggle the claw </field>
+<next>
+<block type="variables_set" id="~+s5|yw@sw)K0:+;@y7S">
+<field name="VAR" id="Y[+/?x30c-19;m~T).8J">Noodle</field>
+<value name="VALUE">
+<block type="math_number" id="R]fBtM!s=HB)#;@E9WA`">
+<field name="NUM">1</field>
+</block>
+</value>
+<next>
+<block type="linearOpMode_waitForStart" id=":K8^U;yjvZn8aWa~t|#1">
+<next>
+<block type="variables_set" id=";s(3W;mINkOM2m4;G*}L">
+<field name="VAR" id="jA]j_SKa.%kHH|.+9ml{">FourBarPos</field>
+<value name="VALUE">
+<block type="math_number" id="x*mOlxZbN)nJVjS3!v])">
+<field name="NUM">0.55</field>
+</block>
+</value>
+<next>
+<block type="variables_set" id="Cf-U$kJK[h#!+fVdx)4S">
+<field name="VAR" id="RHbv4g[MceRxNqDt9dg@">DownArmButtonPressed</field>
+<value name="VALUE">
+<block type="logic_boolean" id="yt1oD_Nv6[l8Fj:tq*2^">
+<field name="BOOL">FALSE</field>
+</block>
+</value>
+<next>
+<block type="variables_set" id="mX9esQ{}}9NLLG~`AT*I">
+<field name="VAR" id="b-/zT|)mq(1-}Ms52o5C">UpArmButtonPressed</field>
+<value name="VALUE">
+<block type="logic_boolean" id="mC+c/.d;WYeJb,T-]fX}">
+<field name="BOOL">FALSE</field>
+</block>
+</value>
+<next>
+<block type="servo_setProperty_Direction" id="$^~j#l+uWAEs4}.n97fl">
+<field name="IDENTIFIER">ElliottispotatoClawAsServo</field>
+<field name="PROP">Direction</field>
+<data>{"IDENTIFIER":"ElliottispotatoClaw"}</data>
+<value name="VALUE">
+<shadow type="servo_typedEnum_direction" id="7|(QH9yo={fM!.`nfFZi">
+<field name="DIRECTION">REVERSE</field>
+</shadow>
+</value>
+<next>
+<block type="controls_whileUntil" id=";?u-rJ#FN3IEUo%rzP0!">
+<field name="MODE">WHILE</field>
+<value name="BOOL">
+<block type="linearOpMode_opModeIsActive" id="-(|WoGbw`fofYl;9=5+0"/>
+</value>
+<statement name="DO">
+<block type="procedures_callnoreturn" id="vmq)3ffW1|-f}3z6qLcN" disabled="true">
+<mutation name="cheese"/>
+<next>
+<block type="procedures_callnoreturn" id="VbXCtN=S=u2N,RWjzEhU" disabled="true">
+<mutation name="corn, a big lump of knobs, it has the juice"/>
+<next>
+<block type="procedures_callnoreturn" id="n#Vi-?+e|NDHb]?F$7wX">
+<mutation name="Elevator (Go Up)"/>
+<next>
+<block type="procedures_callnoreturn" id="^${NIQ%QicdEs+ApA%v9">
+<mutation name="Floor Gives Out (Go Down)"/>
+<next>
+<block type="procedures_callnoreturn" id="|MV+_MrY)k6o3j(AX(Q-">
+<mutation name="Noodle Rounder"/>
+<next>
+<block type="procedures_callnoreturn" id="xP0zN$ma:{O?kNKn,d:j">
+<mutation name="e e eeee (Servo Updater)"/>
+<next>
+<block type="procedures_callnoreturn" id=";MW%0!A,NNRgX1RzdS/!" disabled="true">
+<mutation name="Dog, Bread, Pig"/>
+<next>
+<block type="procedures_callnoreturn" id="7`k=XNVdIsG7+[QSB7k?">
+<mutation name="Leef Blower"/>
+<next>
+<block type="linearOpMode_sleep_Number" id=";2g=IxHuQ=vwHg$s]~kA">
+<value name="MILLISECONDS">
+<shadow type="math_number" id="MO8!qTrHtUQ!!P}k,0A5">
+<field name="NUM">20</field>
+</shadow>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+<next>
+<block type="dcMotor_setProperty_Direction" id="-(R$X]bJ00FUzh6W68U}">
+<field name="IDENTIFIER">BackRightAsDcMotor</field>
+<field name="PROP">Direction</field>
+<data>{"IDENTIFIER":"BackRight"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_direction" id="/hSQpflbmD93)M!/n8+i">
+<field name="DIRECTION">REVERSE</field>
+</shadow>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="-4]V0Qf)G_:6^pHkR:f7" x="0" y="1916">
+<field name="NAME">Dog, Bread, Pig</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="variables_set" id="])X._o?}R).|~polTV);">
+<field name="VAR" id="jA]j_SKa.%kHH|.+9ml{">FourBarPos</field>
+<value name="VALUE">
+<block type="math_constrain" id="iWe]7Mfo0-kY=z[senIW">
+<value name="VALUE">
+<shadow type="math_number" id="6:2:`nL0[9C}.jz)fAB$">
+<field name="NUM">50</field>
+</shadow>
+<block type="math_arithmetic" id="IT-y`$j_y%w/Pv|Xh1jo">
+<field name="OP">ADD</field>
+<value name="A">
+<shadow type="math_number" id="i9j]{o@BhYXsN2JmoCX)">
+<field name="NUM">1</field>
+</shadow>
+<block type="variables_get" id="c3KY!PMHZN$a@5]Z9oU3">
+<field name="VAR" id="jA]j_SKa.%kHH|.+9ml{">FourBarPos</field>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="aH4#xcwo-_~@g:CO81.2">
+<field name="NUM">1</field>
+</shadow>
+<block type="gamepad_getProperty_Number" id="nHy:PpYj+/4{WWzc7l^*">
+<field name="IDENTIFIER">gamepad2</field>
+<field name="PROP">RightStickY</field>
+<data>{"IDENTIFIER":"gamepad2"}</data>
+</block>
+</value>
+</block>
+</value>
+<value name="LOW">
+<shadow type="math_number" id="d]#=Nc~#U:bX,d@?6;ca">
+<field name="NUM">0.5</field>
+</shadow>
+</value>
+<value name="HIGH">
+<shadow type="math_number" id="~K{[hMR{Qjv;3B}C^;s@">
+<field name="NUM">1</field>
+</shadow>
+</value>
+</block>
+</value>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="R~.*[3WDM_Ko+WSV2fLn" x="0" y="2030">
+<field name="NAME">e e eeee (Servo Updater)</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="servo_setProperty_Number" id="a#l,}Cn2/TiWcI%l1!l;">
+<field name="IDENTIFIER">budsterupanddownAsServo</field>
+<field name="PROP">Position</field>
+<data>{"IDENTIFIER":"budsterupanddown"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="T3zscDj3-dkfWXb-=bOA">
+<field name="NUM">0</field>
+</shadow>
+<block type="variables_get" id="IUA%2j`g^yOVIKdD{5B?">
+<field name="VAR" id="jA]j_SKa.%kHH|.+9ml{">FourBarPos</field>
+</block>
+</value>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id=",mjoo?:-xf)M3I}QBDuT" x="0" y="2122">
+<field name="NAME">Elevator (Go Up)</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="controls_if" id="x}D%b/Ckl*$^!m}%38TO">
+<value name="IF0">
+<block type="gamepad_getProperty_Boolean" id="S_f%XxfX:Qr}4^Zzbhe^">
+<field name="IDENTIFIER">gamepad2</field>
+<field name="PROP">RightBumper</field>
+<data>{"IDENTIFIER":"gamepad2"}</data>
+</block>
+</value>
+<statement name="DO0">
+<block type="controls_if" id=":UABy!hT5~uP5t2?Y3F/">
+<value name="IF0">
+<block type="logic_compare" id="dA$dBv0U%]*mhImE%Ruc">
+<field name="OP">EQ</field>
+<value name="A">
+<block type="variables_get" id="VQkmH#SJQgQh@AM^:qel">
+<field name="VAR" id="b-/zT|)mq(1-}Ms52o5C">UpArmButtonPressed</field>
+</block>
+</value>
+<value name="B">
+<block type="logic_boolean" id="tG=FkEF)~]qQ2RNs}@~2">
+<field name="BOOL">FALSE</field>
+</block>
+</value>
+</block>
+</value>
+<statement name="DO0">
+<block type="variables_set" id=")^e6:kTLk9g{@u4+yCSr">
+<field name="VAR" id="b-/zT|)mq(1-}Ms52o5C">UpArmButtonPressed</field>
+<value name="VALUE">
+<block type="logic_boolean" id="2{Y*H+O#STBJ@iRE_6wq">
+<field name="BOOL">TRUE</field>
+</block>
+</value>
+<next>
+<block type="controls_if" id="A*``HDG43_zf}--x4O?W">
+<value name="IF0">
+<block type="logic_compare" id="}cqQ}V7F21~Kt0W|-()V">
+<field name="OP">EQ</field>
+<value name="A">
+<block type="variables_get" id="rQ5cpB|;?C!0d3xV/R`a">
+<field name="VAR" id="Y[+/?x30c-19;m~T).8J">Noodle</field>
+</block>
+</value>
+<value name="B">
+<block type="math_number" id="E=a_rq)KFQ@%}1j08PND">
+<field name="NUM">1</field>
+</block>
+</value>
+</block>
+</value>
+<statement name="DO0">
+<block type="variables_set" id="(lZ-cE_m;:2s_{6W%e[=">
+<field name="VAR" id="jA]j_SKa.%kHH|.+9ml{">FourBarPos</field>
+<value name="VALUE">
+<block type="math_number" id="J@8@e_{2qpSYi6}AS7{j">
+<field name="NUM">0.65</field>
+</block>
+</value>
+</block>
+</statement>
+<next>
+<block type="controls_if" id="BPF_cRR}I~,~{XrzVAXd">
+<value name="IF0">
+<block type="logic_compare" id="Oew7LH??#tY$7$e46/x-">
+<field name="OP">EQ</field>
+<value name="A">
+<block type="variables_get" id="CTpZ7BSSRZfY~,LS.0=+">
+<field name="VAR" id="Y[+/?x30c-19;m~T).8J">Noodle</field>
+</block>
+</value>
+<value name="B">
+<block type="math_number" id="Ur:DJK5AR6TU.#~TpI({">
+<field name="NUM">2</field>
+</block>
+</value>
+</block>
+</value>
+<statement name="DO0">
+<block type="variables_set" id="x)tH^1PVCc2+DMB0)iQr">
+<field name="VAR" id="jA]j_SKa.%kHH|.+9ml{">FourBarPos</field>
+<value name="VALUE">
+<block type="math_number" id="P=JEG_LdWnT(u}Jyf/1a">
+<field name="NUM">0.75</field>
+</block>
+</value>
+</block>
+</statement>
+<next>
+<block type="controls_if" id="#x.5=F)a{8K{t.#[2=N$">
+<value name="IF0">
+<block type="logic_compare" id="$.EqIfLL=BC{et$Z;|tn">
+<field name="OP">EQ</field>
+<value name="A">
+<block type="variables_get" id="a]:1%@07Y`;QI31%+~u#">
+<field name="VAR" id="Y[+/?x30c-19;m~T).8J">Noodle</field>
+</block>
+</value>
+<value name="B">
+<block type="math_number" id="j{IrU7/9?B~dnywSX.6,">
+<field name="NUM">3</field>
+</block>
+</value>
+</block>
+</value>
+<statement name="DO0">
+<block type="variables_set" id="Tjr9NzwFP7UD*4kFT*kG">
+<field name="VAR" id="jA]j_SKa.%kHH|.+9ml{">FourBarPos</field>
+<value name="VALUE">
+<block type="math_number" id="KxZ9VB1:*YyG?EINl%Ei">
+<field name="NUM">0.85</field>
+</block>
+</value>
+</block>
+</statement>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</statement>
+<next>
+<block type="controls_if" id="V%L.,-b40ykD!$7kWsy]">
+<value name="IF0">
+<block type="logic_compare" id="#/e1}u,Ow]z;4nRi;1qv">
+<field name="OP">EQ</field>
+<value name="A">
+<block type="gamepad_getProperty_Boolean" id="4-)g[rv:2bcd}1/xc=ao">
+<field name="IDENTIFIER">gamepad2</field>
+<field name="PROP">RightBumper</field>
+<data>{"IDENTIFIER":"gamepad2"}</data>
+</block>
+</value>
+<value name="B">
+<block type="logic_boolean" id="A{k:-%8vGr~YrZeOY/-U">
+<field name="BOOL">FALSE</field>
+</block>
+</value>
+</block>
+</value>
+<statement name="DO0">
+<block type="variables_set" id="hz4JC5RFl)$P=uuWCcE.">
+<field name="VAR" id="b-/zT|)mq(1-}Ms52o5C">UpArmButtonPressed</field>
+<value name="VALUE">
+<block type="logic_boolean" id="%4e6S9(h$D[fK;+vJs;.">
+<field name="BOOL">FALSE</field>
+</block>
+</value>
+</block>
+</statement>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="J188)oh2bdaq!G]s@^@%" x="0" y="2607">
+<field name="NAME">Floor Gives Out (Go Down)</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="controls_if" id="e]?:?W~)4im31#)+@I1a">
+<value name="IF0">
+<block type="gamepad_getProperty_Boolean" id="|KxjNst_Ws9!`KXsVb|W">
+<field name="IDENTIFIER">gamepad2</field>
+<field name="PROP">LeftBumper</field>
+<data>{"IDENTIFIER":"gamepad2"}</data>
+</block>
+</value>
+<statement name="DO0">
+<block type="controls_if" id="L2r[tCcj5}Tx$4w*@Zpp">
+<value name="IF0">
+<block type="logic_compare" id="E/r;i);m73yesUU-oQ2)">
+<field name="OP">EQ</field>
+<value name="A">
+<block type="variables_get" id="=5V!=,|20EN?h[!SYExY">
+<field name="VAR" id="RHbv4g[MceRxNqDt9dg@">DownArmButtonPressed</field>
+</block>
+</value>
+<value name="B">
+<block type="logic_boolean" id="i:LC,sTo~n#/)P[zwCVe">
+<field name="BOOL">FALSE</field>
+</block>
+</value>
+</block>
+</value>
+<statement name="DO0">
+<block type="variables_set" id="D2Nwoj6-!P7{6U@`6DtJ">
+<field name="VAR" id="RHbv4g[MceRxNqDt9dg@">DownArmButtonPressed</field>
+<value name="VALUE">
+<block type="logic_boolean" id="h!My3K=(Hj1}#?N~T.C,">
+<field name="BOOL">TRUE</field>
+</block>
+</value>
+<next>
+<block type="controls_if" id="@|`a:$gmtWV[RJ;$XL#M">
+<value name="IF0">
+<block type="logic_compare" id="LVu*GkO-+_fPz61OaYbO">
+<field name="OP">EQ</field>
+<value name="A">
+<block type="variables_get" id="h[U.(#2O}_+pAog2hh}d">
+<field name="VAR" id="Y[+/?x30c-19;m~T).8J">Noodle</field>
+</block>
+</value>
+<value name="B">
+<block type="math_number" id="5~q9#~*4f|H]`V-QBM,v">
+<field name="NUM">2</field>
+</block>
+</value>
+</block>
+</value>
+<statement name="DO0">
+<block type="variables_set" id="D3e+*hs/kbKmSm%,Nj]`">
+<field name="VAR" id="jA]j_SKa.%kHH|.+9ml{">FourBarPos</field>
+<value name="VALUE">
+<block type="math_number" id="wS(g,/uBoUxes8B{h_s5">
+<field name="NUM">0.55</field>
+</block>
+</value>
+</block>
+</statement>
+<next>
+<block type="controls_if" id="j$M_|#U77jj^0#8kgwK(">
+<value name="IF0">
+<block type="logic_compare" id="C5v.@UTMZ`)u!i+%9VWa">
+<field name="OP">EQ</field>
+<value name="A">
+<block type="variables_get" id=";(P#pasYm*Gf*7^)9i79">
+<field name="VAR" id="Y[+/?x30c-19;m~T).8J">Noodle</field>
+</block>
+</value>
+<value name="B">
+<block type="math_number" id="mg}?w7m[.8MD-FHGTUPA">
+<field name="NUM">3</field>
+</block>
+</value>
+</block>
+</value>
+<statement name="DO0">
+<block type="variables_set" id="Q=H+}-DgxeIJQc8OLpuT">
+<field name="VAR" id="jA]j_SKa.%kHH|.+9ml{">FourBarPos</field>
+<value name="VALUE">
+<block type="math_number" id="rvU0^7.ZQL6{y?(Oyn7`">
+<field name="NUM">0.65</field>
+</block>
+</value>
+</block>
+</statement>
+<next>
+<block type="controls_if" id="c9hJ/JA?FYBy}z1@+ae?">
+<value name="IF0">
+<block type="logic_compare" id="(/paKT2^3yLmfF^Czo`K">
+<field name="OP">EQ</field>
+<value name="A">
+<block type="variables_get" id="k^4C4I?2LCPna7)?@(om">
+<field name="VAR" id="Y[+/?x30c-19;m~T).8J">Noodle</field>
+</block>
+</value>
+<value name="B">
+<block type="math_number" id="fHk0OF^;=u/YK]dC6s/P">
+<field name="NUM">4</field>
+</block>
+</value>
+</block>
+</value>
+<statement name="DO0">
+<block type="variables_set" id="XP;]y6sE=j(Od:79TbkV">
+<field name="VAR" id="jA]j_SKa.%kHH|.+9ml{">FourBarPos</field>
+<value name="VALUE">
+<block type="math_number" id="|E-qyFxO+T1b#JCVO913">
+<field name="NUM">0.75</field>
+</block>
+</value>
+</block>
+</statement>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</statement>
+<next>
+<block type="controls_if" id="Z?mFusZPlQxjdn-t/+84">
+<value name="IF0">
+<block type="logic_compare" id="7b.Zl-VT)dh}4H%Y4bN)">
+<field name="OP">EQ</field>
+<value name="A">
+<block type="gamepad_getProperty_Boolean" id="}ss)7-]U#3^lFi!c2[)x">
+<field name="IDENTIFIER">gamepad2</field>
+<field name="PROP">LeftBumper</field>
+<data>{"IDENTIFIER":"gamepad2"}</data>
+</block>
+</value>
+<value name="B">
+<block type="logic_boolean" id="`?W(g*%8BXp(G_+,_t,l">
+<field name="BOOL">FALSE</field>
+</block>
+</value>
+</block>
+</value>
+<statement name="DO0">
+<block type="variables_set" id="g6J#Gc4cK:9DQo@d,k;C">
+<field name="VAR" id="RHbv4g[MceRxNqDt9dg@">DownArmButtonPressed</field>
+<value name="VALUE">
+<block type="logic_boolean" id="j)EKkBS?ke%SN?g[6KnU">
+<field name="BOOL">FALSE</field>
+</block>
+</value>
+</block>
+</statement>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="IIDeClAM}wNq:?kVZ`_e" x="0" y="3092">
+<field name="NAME">Noodle Rounder</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="comment" id="ZC07zhd?Im4!z7p=;u--">
+<field name="COMMENT">G=0.5 - .60 S=.61 - .70 M=.71 - .80 H=.81+</field>
+<next>
+<block type="comment" id="ZsPrsyvN:!?j[ywJz=3|">
+<field name="COMMENT">Ground (1)</field>
+<next>
+<block type="controls_if" id="khy4A7I3`-mu3]8bgJq}">
+<value name="IF0">
+<block type="logic_compare" id="OB_1=KjWAA0s8pJ-pb)T">
+<field name="OP">LT</field>
+<value name="A">
+<block type="variables_get" id="kSiEEO2RgSDlVETb,9XR">
+<field name="VAR" id="jA]j_SKa.%kHH|.+9ml{">FourBarPos</field>
+</block>
+</value>
+<value name="B">
+<block type="math_number" id="z{pqQqj-eqkp6ti**fq(">
+<field name="NUM">0.61</field>
+</block>
+</value>
+</block>
+</value>
+<statement name="DO0">
+<block type="variables_set" id="c4CgD9H_C`?wSMShw)TW">
+<field name="VAR" id="Y[+/?x30c-19;m~T).8J">Noodle</field>
+<value name="VALUE">
+<block type="math_number" id="/rsbYu|fxDI#**v]!}Gl">
+<field name="NUM">1</field>
+</block>
+</value>
+</block>
+</statement>
+<next>
+<block type="comment" id="=jdRZ_+Srdt5I=!,(y=d">
+<field name="COMMENT">Small (2)</field>
+<next>
+<block type="controls_if" id="U2Mp@NKFimph.VBkE_F!">
+<value name="IF0">
+<block type="logic_operation" id="fhMa:cRCk{{byqka9;e1">
+<field name="OP">AND</field>
+<value name="A">
+<block type="logic_compare" id="n%~d7/X3ZuL]fSeMp,oE">
+<field name="OP">GTE</field>
+<value name="A">
+<block type="variables_get" id="U6J1IhmXWH`wA~U.po|g">
+<field name="VAR" id="jA]j_SKa.%kHH|.+9ml{">FourBarPos</field>
+</block>
+</value>
+<value name="B">
+<block type="math_number" id="CicsYUYrY!BdnZXunQFx">
+<field name="NUM">0.61</field>
+</block>
+</value>
+</block>
+</value>
+<value name="B">
+<block type="logic_compare" id="xs-V}$`o+$C+%c^EgPU0">
+<field name="OP">LTE</field>
+<value name="A">
+<block type="variables_get" id="*)$h`LHT^6V@X+^S39ea">
+<field name="VAR" id="jA]j_SKa.%kHH|.+9ml{">FourBarPos</field>
+</block>
+</value>
+<value name="B">
+<block type="math_number" id="(6#5HJYEni@yqwLB=$HF">
+<field name="NUM">0.7</field>
+</block>
+</value>
+</block>
+</value>
+</block>
+</value>
+<statement name="DO0">
+<block type="variables_set" id="h+ttNN)0Z:_=s0N,x_-4">
+<field name="VAR" id="Y[+/?x30c-19;m~T).8J">Noodle</field>
+<value name="VALUE">
+<block type="math_number" id="sl)=rHY?|QH#VUFD^t3M">
+<field name="NUM">2</field>
+</block>
+</value>
+</block>
+</statement>
+<next>
+<block type="comment" id="`8DP#v01]Z7fYGPpS3Vi">
+<field name="COMMENT">Medium (3)</field>
+<next>
+<block type="controls_if" id="_)$eApugM2h~mT*]9UFH">
+<value name="IF0">
+<block type="logic_operation" id="eT*.7CP]U6W4m8tY.v*q">
+<field name="OP">AND</field>
+<value name="A">
+<block type="logic_compare" id="-4X8WL*B-k%eY6hNl]I)">
+<field name="OP">GTE</field>
+<value name="A">
+<block type="variables_get" id="jb502uer,?nLr06?kIEx">
+<field name="VAR" id="jA]j_SKa.%kHH|.+9ml{">FourBarPos</field>
+</block>
+</value>
+<value name="B">
+<block type="math_number" id="9eb{B@b_RkuIohy!;6]%">
+<field name="NUM">0.71</field>
+</block>
+</value>
+</block>
+</value>
+<value name="B">
+<block type="logic_compare" id="8]Xp|}^S/%0t*tC$ms9u">
+<field name="OP">LT</field>
+<value name="A">
+<block type="variables_get" id="Glp|Ud6ZaGqBW+{W@Cf0">
+<field name="VAR" id="jA]j_SKa.%kHH|.+9ml{">FourBarPos</field>
+</block>
+</value>
+<value name="B">
+<block type="math_number" id=":NaXkP%vcB*$=kWObmOi">
+<field name="NUM">0.81</field>
+</block>
+</value>
+</block>
+</value>
+</block>
+</value>
+<statement name="DO0">
+<block type="variables_set" id="UgAO?Oq!WROs~K%qRES0">
+<field name="VAR" id="Y[+/?x30c-19;m~T).8J">Noodle</field>
+<value name="VALUE">
+<block type="math_number" id="a%zE#S3]N|x|oJnZ.$1t">
+<field name="NUM">3</field>
+</block>
+</value>
+</block>
+</statement>
+<next>
+<block type="comment" id="mVTg0FKmbk.|~%o_)t{)">
+<field name="COMMENT">High (4)</field>
+<next>
+<block type="controls_if" id="x_a]lGXIWF1B3W39;F+u">
+<value name="IF0">
+<block type="logic_compare" id="#$aXBeVsGi=%2ys-x^I/">
+<field name="OP">GTE</field>
+<value name="A">
+<block type="variables_get" id="}u!YxTTj!QbpAn}%bB-,">
+<field name="VAR" id="jA]j_SKa.%kHH|.+9ml{">FourBarPos</field>
+</block>
+</value>
+<value name="B">
+<block type="math_number" id="bE`{5.9rITv$DBe*G)/p">
+<field name="NUM">0.81</field>
+</block>
+</value>
+</block>
+</value>
+<statement name="DO0">
+<block type="variables_set" id="jSp19iunP0OajWK3F^3-">
+<field name="VAR" id="Y[+/?x30c-19;m~T).8J">Noodle</field>
+<value name="VALUE">
+<block type="math_number" id="YA@CS?qKW$_b.*P#B~~k">
+<field name="NUM">4</field>
+</block>
+</value>
+</block>
+</statement>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</xml>
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<Extra>
+<OpModeMeta flavor="TELEOP" group="" autoTransition="" />
+<Enabled value="true" />
+</Extra>
